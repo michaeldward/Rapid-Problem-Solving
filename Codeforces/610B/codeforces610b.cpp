@@ -1,12 +1,10 @@
 #include <iostream>
-#include <deque>
-#include <string>
 
-int paint(int length, int jars[])
+int paint(int length, long jars[])
 {
 	int jarsFull = length;
 	int squaresPainted = 0;
-	int smallest = 10000;
+	long smallest = jars[0];
 	int smallestPlace = 0;
 	for (int i = 0; i < length; ++i)
 	{
@@ -15,22 +13,25 @@ int paint(int length, int jars[])
 			smallest = jars[i];
 			smallestPlace = i;
 		}
+		else if (jars[i] == smallest)
+		{
+			smallestPlace = i;
+		}
 	}
-	std::cout << smallestPlace << std::endl;
+	for (int i = smallestPlace + 1; i < length; ++i)
+	{
+		if (jars[i] == 0)
+		{
+			return squaresPainted;
+		}
+		else if (jars[i] > 0)
+		{
+			jars[i] -= 1;
+			squaresPainted += 1;
+		}
+	}
 	while (jarsFull > 0)
 	{
-		for (int i = smallestPlace + 1; i < length; ++i)
-		{
-			if (jars[i] == 0)
-			{
-				return squaresPainted;
-			}
-			else if (jars[i] > 0)
-			{
-				jars[i] -= 1;
-				squaresPainted += 1;
-			}
-		}
 		for (int i = 0; i < length; ++i)
 		{
 			if (jars[i] == 0)
@@ -49,10 +50,10 @@ int paint(int length, int jars[])
 
 int main()
 {
-	int* list;
+	long* list;
 	int n;
 	std::cin >> n;
-	list = new int[n];
+	list = new long[n];
 	for (int i = 0; i < n; ++i)
 	{
 		std::cin >> list[i];
