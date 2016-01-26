@@ -3,7 +3,7 @@
 int paint(int length, long jars[])
 {
 	int jarsFull = length;
-	int squaresPainted = 0;
+	long squaresPainted = 0;
 	long smallest = jars[0];
 	int smallestPlace = 0;
 	for (int i = 0; i < length; ++i)
@@ -18,6 +18,11 @@ int paint(int length, long jars[])
 			smallestPlace = i;
 		}
 	}
+	squaresPainted += smallest * jarsFull;
+	for (int i = 0; i < length; ++i)
+	{
+		jars[i] -= smallest;
+	}
 	for (int i = smallestPlace + 1; i < length; ++i)
 	{
 		if (jars[i] == 0)
@@ -30,19 +35,16 @@ int paint(int length, long jars[])
 			squaresPainted += 1;
 		}
 	}
-	while (jarsFull > 0)
+	for (int i = 0; i < length; ++i)
 	{
-		for (int i = 0; i < length; ++i)
+		if (jars[i] == 0)
 		{
-			if (jars[i] == 0)
-			{
-				return squaresPainted;
-			}
-			else if (jars[i] > 0)
-			{
-				jars[i] -= 1;
-				squaresPainted += 1;
-			}
+			return squaresPainted;
+		}
+		else if (jars[i] > 0)
+		{
+			jars[i] -= 1;
+			squaresPainted += 1;
 		}
 	}
 	return squaresPainted;
