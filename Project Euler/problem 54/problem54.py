@@ -201,7 +201,7 @@ def determine_high(player1, player2):
         return determine_high(player1, player2)
 
 f = open('input.txt', 'r')
-         
+       
 content = f.readlines()
 oneWins = 0
 twoWins = 0
