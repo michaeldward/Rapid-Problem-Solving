@@ -1,0 +1,37 @@
+cbrk
+
+DESCRIPTION
+
+You have a rectangular chocolate bar marked into m times n squares, and you
+wish to break up the bar into its constituent squares. At each step you choose
+one piece and break it along one of its marked vertical or horizontal lines,
+using a greedy method detailed as follows.
+
+You always choose the largest piece at each step, that is, the piece composed
+of the maximum number of squares. If there are two or more largest pieces but
+with different shapes, choose one that is as close to a square as possible.
+
+To break a piece, you first determine the orientation of the line. If the
+number of columns is more than the number of rows, you choose from vertical
+lines; otherwise you choose from horizontal lines. Once the orientation of
+the line is determined, you then choose the actual line to be one that breaks
+the piece as evenly as possible.
+
+How many steps do you need in total?
+
+INPUT
+
+There are several test cases. For each test case, there is one line of input
+containing two positive integers separated by a space. The first integer is
+m, the number of columns; the second integer is n, the number of rows. All
+integers in the test cases are between 1 and 1000000000, inclusive.
+
+OUTPUT
+
+For each test case, output in a separate line the total number of steps to
+break the chocolate bar using the greedy method.
+
+SOURCE
+
+Inspired by a puzzle in Winkler's first puzzle book:
+http://www.amazon.com/Mathematical-Puzzles-A-Connoisseurs-Collection/dp/1568812019

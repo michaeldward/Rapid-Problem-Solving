@@ -1,0 +1,29 @@
+ccut
+
+DESCRIPTION
+
+You have a rectangular chocolate bar marked into m times n squares, and you
+want to share it with your love. To break the bar into two equal parts is
+not always possible if you have to break it along one of its marked vertical
+or horizontal lines, when both m and n can be odd numbers. So you decide to
+simply use a knife to cut the bar, along a diagonal of the rectangle, to get
+two identical triangles.
+
+Note that those squares crossed by the diagonal are shared by you and your
+love. How many such squares are there?
+
+INPUT
+
+There are several test cases. For each test case, there is one line of input
+containing two positive integers m and n separated by a space. All integers
+in the test cases are less than 2^62.
+
+OUTPUT
+
+For each test case, output in a separate line the number of squares that are
+crossed by the diagonal.
+
+SOURCE
+
+Inspired by Problem 7 of this book:
+http://www.amazon.com/Mathematical-Circles-Russian-Experience-World/dp/0821804308/
