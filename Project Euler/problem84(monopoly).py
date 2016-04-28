@@ -66,7 +66,7 @@ for y in range(0, 100000):
     d1 = random.randint(1, 6)
     d2 = random.randint(1, 6)
     if d1 == d2:
-        ++dd
+        dd = dd + 1
     else:
         dd = 0
     roll = d1 + d2
